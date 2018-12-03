@@ -1,0 +1,10 @@
+[
+    { "label":"Centro de Capacitacion Misional", "latitude":"19.53808", "longitude":"-99.1522582" },
+    { "label":"Barrio Solano", "latitude":"33.5108047", "longitude":"-112.14018049999999" },
+    { "label":"Barrio La Joya", "latitude":"33.5019869", "longitude":"-112.24705189999997" },
+    { "label":"Rama Rio Verde", "latitude":"34.712931", "longitude":"-112.01102860000003" },
+    { "label":"Sedona Ward", "latitude":"34.8649571", "longitude":"-111.76794050000001" },
+    { "label":"Spring Valley Ward", "latitude":"34.346951", "longitude":"-112.15556700000002" },
+    { "label":"Barrio Agua Fria", "latitude":"33.5831964", "longitude":"-112.22401109999998" },
+    { "label":"Barrio Encanto", "latitude":"33.471871", "longitude":"-112.15866920000002" }
+]
