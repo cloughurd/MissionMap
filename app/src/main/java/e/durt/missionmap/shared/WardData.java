@@ -1,4 +1,6 @@
-package e.durt.missionmap;
+package e.durt.missionmap.shared;
+
+import e.durt.missionmap.shared.IPlottable;
 
 public class WardData implements IPlottable {
     private String label;

@@ -1,4 +1,4 @@
-package e.durt.missionmap;
+package e.durt.missionmap.shared;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -18,6 +18,16 @@ public class AssetRetriever implements IDataRetriever {
         InputStream asset = SingleFactory.getMapPresenter().getView().getFileFromAssets(WARDS_FILENAME);
         Type listType = new TypeToken<ArrayList<WardData>>(){}.getType();
 
+        return gson.fromJson(new InputStreamReader(asset), listType);
+    }
+
+    @Override
+    public List<Epistle> getAreaEpistles(String areaName) {
+        String areaFile = areaName.replaceAll("\\s", "") + ".json";
+
+        Gson gson = new Gson();
+        InputStream asset = SingleFactory.getMapPresenter().getView().getFileFromAssets(areaFile);
+        Type listType = new TypeToken<ArrayList<Epistle>>(){}.getType();
         return gson.fromJson(new InputStreamReader(asset), listType);
     }
 }

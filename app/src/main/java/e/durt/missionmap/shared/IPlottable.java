@@ -1,4 +1,4 @@
-package e.durt.missionmap;
+package e.durt.missionmap.shared;
 
 public interface IPlottable {
 

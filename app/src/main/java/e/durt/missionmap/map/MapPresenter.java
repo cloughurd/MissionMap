@@ -1,6 +1,8 @@
-package e.durt.missionmap;
+package e.durt.missionmap.map;
 
-public class MapPresenter implements IMapPresenter{
+import e.durt.missionmap.shared.SingleFactory;
+
+public class MapPresenter implements IMapPresenter {
     private IMapDisplay mapView;
 
     public MapPresenter(IMapDisplay mapView){
@@ -19,7 +21,7 @@ public class MapPresenter implements IMapPresenter{
 
     @Override
     public void selectArea(String areaName) {
-        mapView.showMessage(areaName);
+        mapView.startListActivity(areaName);
     }
 
     @Override

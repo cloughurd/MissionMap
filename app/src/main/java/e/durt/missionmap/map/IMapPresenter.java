@@ -1,7 +1,5 @@
-package e.durt.missionmap;
+package e.durt.missionmap.map;
 
-
-import java.io.InputStream;
 
 public interface IMapPresenter {
 

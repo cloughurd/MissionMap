@@ -1,8 +1,6 @@
-package e.durt.missionmap;
+package e.durt.missionmap.map;
 
-import android.app.Activity;
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,20 +14,22 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.model.BitmapDescriptor;
-import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.Polyline;
 import com.google.android.gms.maps.model.PolylineOptions;
-import com.joanzapata.iconify.IconDrawable;
-import com.joanzapata.iconify.fonts.FontAwesomeIcons;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.InputStreamReader;
+import java.util.ArrayList;
 import java.util.List;
+
+import e.durt.missionmap.R;
+import e.durt.missionmap.list.EpistleListActivity;
+import e.durt.missionmap.shared.SingleFactory;
+import e.durt.missionmap.shared.Epistle;
+import e.durt.missionmap.shared.IPlottable;
 
 public class MyMapFragment extends SupportMapFragment implements IMapDisplay, OnMapReadyCallback {
     private GoogleMap map;
@@ -141,5 +141,13 @@ public class MyMapFragment extends SupportMapFragment implements IMapDisplay, On
                 Toast.makeText(getContext(),message, Toast.LENGTH_LONG).show();
             }
         });
+    }
+
+    @Override
+    public void startListActivity(String areaName) {
+        Bundle bundle = new Bundle();
+        bundle.putString("area", areaName);
+
+        startActivity(new Intent(getActivity(), EpistleListActivity.class), bundle);
     }
 }

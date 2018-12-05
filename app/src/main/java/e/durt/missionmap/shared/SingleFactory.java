@@ -1,4 +1,6 @@
-package e.durt.missionmap;
+package e.durt.missionmap.shared;
+
+import e.durt.missionmap.map.IMapPresenter;
 
 public class SingleFactory {
     private static IMapPresenter mapPresenter = null;
