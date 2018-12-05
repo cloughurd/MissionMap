@@ -1,7 +1,7 @@
 package e.durt.missionmap;
 
 public class MapPresenter implements IMapPresenter{
-    IMapDisplay mapView;
+    private IMapDisplay mapView;
 
     public MapPresenter(IMapDisplay mapView){
         this.mapView = mapView;
@@ -15,6 +15,11 @@ public class MapPresenter implements IMapPresenter{
     @Override
     public void notifyMapReady() {
         mapView.placePOIs(SingleFactory.getUIFacade().getPoints());
+    }
+
+    @Override
+    public void selectArea(String areaName) {
+        mapView.showMessage(areaName);
     }
 
     @Override

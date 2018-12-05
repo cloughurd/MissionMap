@@ -4,6 +4,7 @@ public class WardData implements IPlottable {
     private String label;
     private String latitude;
     private String longitude;
+    private String dateRange;
 
     public WardData(){
 
@@ -22,6 +23,15 @@ public class WardData implements IPlottable {
     @Override
     public String getLongitude() {
         return longitude;
+    }
+
+    @Override
+    public String getDateString() {
+        return dateRange;
+    }
+
+    public void setDateRange(String dateRange) {
+        this.dateRange = dateRange;
     }
 
     public void setLabel(String label) {

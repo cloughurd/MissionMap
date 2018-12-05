@@ -4,6 +4,8 @@ public interface IPlottable {
 
     String getLabel();
 
+    String getDateString();
+
     String getLatitude();
     String getLongitude();
 

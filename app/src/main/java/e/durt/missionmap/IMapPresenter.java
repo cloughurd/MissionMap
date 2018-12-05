@@ -9,6 +9,8 @@ public interface IMapPresenter {
 
     void notifyMapReady();
 
+    void selectArea(String areaName);
+
     IMapDisplay getView();
 
 }

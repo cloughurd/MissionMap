@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class AssetRetriever implements IDataRetriever {
-    private final String WARDS_FILENAME = "areaCoordinates.txt";
+    private final String WARDS_FILENAME = "areaCoordinates.json";
 
     @Override
     public List<IPlottable> getPoints() {
