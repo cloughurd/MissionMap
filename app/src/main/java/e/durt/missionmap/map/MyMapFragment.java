@@ -27,11 +27,12 @@ import java.util.List;
 
 import e.durt.missionmap.R;
 import e.durt.missionmap.list.EpistleListActivity;
+import e.durt.missionmap.shared.AssetAccessor;
 import e.durt.missionmap.shared.SingleFactory;
 import e.durt.missionmap.shared.Epistle;
 import e.durt.missionmap.shared.IPlottable;
 
-public class MyMapFragment extends SupportMapFragment implements IMapDisplay, OnMapReadyCallback {
+public class MyMapFragment extends SupportMapFragment implements IMapDisplay, OnMapReadyCallback, AssetAccessor {
     private GoogleMap map;
     private MapView mapView;
     private IMapPresenter mapPresenter;
@@ -49,7 +50,7 @@ public class MyMapFragment extends SupportMapFragment implements IMapDisplay, On
 
 //        getMapAsync(this);
 
-        SingleFactory.setMapPresenter(mapPresenter);
+        SingleFactory.setAssetAccessor(this);
     }
 
     @Override
@@ -147,7 +148,8 @@ public class MyMapFragment extends SupportMapFragment implements IMapDisplay, On
     public void startListActivity(String areaName) {
         Bundle bundle = new Bundle();
         bundle.putString("area", areaName);
-
-        startActivity(new Intent(getActivity(), EpistleListActivity.class), bundle);
+        Intent intent = new Intent(getActivity(), EpistleListActivity.class);
+        intent.putExtras(bundle);
+        startActivity(intent);
     }
 }

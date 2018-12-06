@@ -16,7 +16,8 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:background="@color/colorPrimary"
-        android:id="@+id/map_footer">
+        android:id="@+id/map_footer"
+        android:paddingVertical="4sp">
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

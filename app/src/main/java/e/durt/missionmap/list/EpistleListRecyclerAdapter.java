@@ -48,10 +48,12 @@ public class EpistleListRecyclerAdapter extends RecyclerView.Adapter<EpistleList
             date = v.findViewById(R.id.item_date);
             subject = v.findViewById(R.id.item_subject);
             this.listener = listener;
+            v.setOnClickListener(this);
         }
 
         void onBind(Epistle epistle){
-            date.setText(epistle.getDateString());
+            String dateString = epistle.getDateString() + ": ";
+            date.setText(dateString);
             subject.setText(epistle.getSubject());
         }
 

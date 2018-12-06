@@ -15,7 +15,10 @@ public class AssetRetriever implements IDataRetriever {
     @Override
     public List<IPlottable> getPoints() {
         Gson gson = new Gson();
-        InputStream asset = SingleFactory.getMapPresenter().getView().getFileFromAssets(WARDS_FILENAME);
+        InputStream asset = SingleFactory.getAssetAccessor().getFileFromAssets(WARDS_FILENAME);
+        if(asset == null){
+            return new ArrayList<IPlottable>();
+        }
         Type listType = new TypeToken<ArrayList<WardData>>(){}.getType();
 
         return gson.fromJson(new InputStreamReader(asset), listType);
@@ -24,9 +27,13 @@ public class AssetRetriever implements IDataRetriever {
     @Override
     public List<Epistle> getAreaEpistles(String areaName) {
         String areaFile = areaName.replaceAll("\\s", "") + ".json";
+        System.out.println("File:" + areaFile);
 
         Gson gson = new Gson();
-        InputStream asset = SingleFactory.getMapPresenter().getView().getFileFromAssets(areaFile);
+        InputStream asset = SingleFactory.getAssetAccessor().getFileFromAssets(areaFile);
+        if(asset == null){
+            return new ArrayList<Epistle>();
+        }
         Type listType = new TypeToken<ArrayList<Epistle>>(){}.getType();
         return gson.fromJson(new InputStreamReader(asset), listType);
     }

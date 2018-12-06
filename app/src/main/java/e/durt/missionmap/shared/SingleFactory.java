@@ -3,16 +3,16 @@ package e.durt.missionmap.shared;
 import e.durt.missionmap.map.IMapPresenter;
 
 public class SingleFactory {
-    private static IMapPresenter mapPresenter = null;
+    private static AssetAccessor assetAccessor = null;
     private static IDataRetriever dataRetriever = new AssetRetriever();
     private static IUIFacade uiFacade = new UIFacade(dataRetriever);
 
-    public static IMapPresenter getMapPresenter(){
-        return mapPresenter;
+    public static AssetAccessor getAssetAccessor(){
+        return assetAccessor;
     }
 
-    public static void setMapPresenter(IMapPresenter newMapPresenter){
-        mapPresenter = newMapPresenter;
+    public static void setAssetAccessor(AssetAccessor newAssetAccessor){
+        assetAccessor = newAssetAccessor;
     }
 
     public static IUIFacade getUIFacade(){

@@ -38,7 +38,6 @@
             android:value="@string/google_maps_key" />
 
         <activity android:name=".list.EpistleListActivity" />
-        <activity android:name=".epistle.SingleEpistleActivity"></activity>
     </application>
 
 </manifest>

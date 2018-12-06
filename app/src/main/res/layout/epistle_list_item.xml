@@ -2,14 +2,22 @@
 <LinearLayout android:layout_height="wrap_content"
     android:layout_width="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="horizontal">
+    android:orientation="horizontal"
+    android:padding="16sp"
+    android:background="@color/colorPrimary">
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:id="@+id/item_date"/>
+        android:id="@+id/item_date"
+        android:textSize="16sp"
+        android:layout_weight="1"
+        android:textColor="@color/white"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:id="@+id/item_subject"/>
+        android:id="@+id/item_subject"
+        android:textSize="16sp"
+        android:layout_weight="3"
+        android:textColor="@color/white"/>
 
 </LinearLayout>
